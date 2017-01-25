@@ -1,0 +1,63 @@
+﻿body {
+	font-family: 'Overpass Mono', monospace;
+}
+header {
+	height: 30pt;
+}
+.menu {
+	padding: 0px 10px; /*внутренний отступ слева и справа 10px, cdth[e b cybpe 0 для ul с class="menu"*/
+	font-size: 0; /*высота текста=0 для ul с class="menu"(выполняем для того, чтоб убрать пробелы между строчными блоками меню)*/
+	line-height: 30pt; /*высота для ul с class="menu" (высота строки меню)*/
+}
+.menu li ul li {
+	display: none; /*скрыть элементы списков 2-го и последующих уровней*/
+	padding: 0 20px 0;
+}
+.menu li {
+	list-style-type: none;
+	background: rgb(74,74,74); /*цвет фона для всех li с class="menu"*/
+	font-size: 14pt; /*высота шрифта текста*/
+}
+.menu li ul {
+	padding: 0; /*внутренние отступы для ul, сщдержащимся в li с class="menu"*/
+}
+.menu > li { /*для элемнтов списка только 1-го уровня*/
+	display: inline-block; /*отображение элементов li (меню 1-го ранга) в строку*/
+	text-align: center; /*выравнивание текста блока li по центру*/
+	width: 25%; /*каждый элемент li займет четверть ширины текстового поля элемента ul с class="menu"*/ 
+	vertical-align: top; /*все кнопки меню привязать вверх (предотвращаем опускание одной из кнопок при разном количестве содержащихся li)*/ 
+}
+.menu li > a { /*для всех элемнтов а, содержащихся внутри элементов li с class="menu"*/ 
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.menu > li > a {
+	text-transform: uppercase;
+}
+.menu li:hover {
+	background: rgb(200,200,070);
+}
+.menu li:hover > a{
+	color: #000;
+}
+.menu li:hover > ul > li {
+	display: block;	
+}
+.menu > li ul li {
+	text-align: left; /*выравнивание текста блока li по левому краю*/
+	list-style-type:none;
+	position: relative;
+}
+.menu > li > ul > li:hover ul {	
+	display: block;	
+	position: absolute; left: 100%; top: 0;
+	width: 100%;
+}
+.menu li:last-child ul > li:hover ul {
+	display: block;	
+	position: absolute; left: -100%; top: 0%;
+	width: 100%;
+}
